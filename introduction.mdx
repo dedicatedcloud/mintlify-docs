@@ -3,69 +3,47 @@ title: Introduction
 description: 'Welcome to the home of your new documentation'
 ---
 
-<img
-  className="block dark:hidden"
-  src="/images/hero-light.svg"
-  alt="Hero Light"
-/>
-<img
-  className="hidden dark:block"
-  src="/images/hero-dark.svg"
-  alt="Hero Dark"
-/>
+### Installing WP-CLI
 
-## Setting up
+Downloading the Phar file is the recommended installation method for most users. If you need other options, refer to the documentation on alternative installation methods such as Composer, Homebrew, or Docker.
 
-The first step to world-class documentation is setting up your editing environments.
+#### Minimum Requirements
 
-<CardGroup cols={2}>
-  <Card
-    title="Edit Your Docs"
-    icon="pen-to-square"
-    href="https://mintlify.com/docs/quickstart"
-  >
-    Get your docs set up locally for easy development
-  </Card>
-  <Card
-    title="Preview Changes"
-    icon="image"
-    href="https://mintlify.com/docs/development"
-  >
-    Preview your changes before you push to make sure they're perfect
-  </Card>
-</CardGroup>
+Before proceeding with the installation, ensure your environment meets these minimum requirements:
 
-## Make it yours
+- **UNIX-like environment**: This includes OS X, Linux, FreeBSD, or Cygwin. Limited support is available for Windows environments.
+- **PHP version**: 5.6 or later is required.
+- **WordPress version**: Version 3.7 or later. Be aware that older versions may have limited functionality.
 
-Update your docs to your brand and add valuable content for the best user conversion.
+#### Downloading WP-CLI
 
-<CardGroup cols={2}>
-  <Card
-    title="Customize Style"
-    icon="palette"
-    href="https://mintlify.com/docs/settings/global"
-  >
-    Customize your docs to your company's colors and brands
-  </Card>
-  <Card
-    title="Reference APIs"
-    icon="code"
-    href="https://mintlify.com/docs/api-playground/openapi"
-  >
-    Automatically generate endpoints from an OpenAPI spec
-  </Card>
-  <Card
-    title="Add Components"
-    icon="screwdriver-wrench"
-    href="https://mintlify.com/docs/components/accordion"
-  >
-    Build interactive features and designs to guide your users
-  </Card>
-  <Card
-    title="Get Inspiration"
-    icon="stars"
-    href="https://mintlify.com/customers"
-  >
-    Check out our showcase of our favorite documentation
-  </Card>
-</CardGroup>
+Once you confirm your environment meets the requirements, you can download the `wp-cli.phar` file using either `wget` or `curl`.
+
+```bash
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+```
+
+#### Verifying the Installation
+
+To ensure the downloaded Phar file works, execute a command to check its status. 
+
+```bash
+php wp-cli.phar --info
+```
+
+
+#### Making WP-CLI Accessible Globally
+
+To run WP-CLI by simply typing `wp` in the command line, you'll need to make the file executable and move it to a directory included in your system's PATH.
+
+#### Confirming the Installation
+
+If everything has been set up correctly, running a command like `wp --info` will display details about your environment, including the operating system, PHP version, MySQL information, and WP-CLI version. This output provides a quick way to verify that WP-CLI is functioning properly. 
+
+```bash
+chmod +x wp-cli.phar
+sudo mv wp-cli.phar /usr/local/bin/wp
+```
+---
+
+Let me know if you need more help or further customization!
